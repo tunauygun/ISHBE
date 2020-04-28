@@ -5,6 +5,8 @@
  */
 package ishbe.server;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author uygun
@@ -12,6 +14,7 @@ package ishbe.server;
 public class Player {
     int score = 0;
     String name;
+    ArrayList<String> submittedAnswers = new ArrayList<>();
     
     public Player(String n){
         this.name = n;

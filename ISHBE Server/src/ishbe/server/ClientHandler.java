@@ -9,6 +9,7 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -26,24 +27,22 @@ public class ClientHandler extends Thread {
         this.dis = dis; 
         this.dos = dos; 
     } 
+    
+
   
     @Override
     public void run(){ 
         String received; 
-        String toreturn;
         Player p;
-        
+        System.out.println("Client Handler is running");
         try {
             // Ask username
-            dos.writeUTF("Username?");
             String username = dis.readUTF();
             p = new Player(username);
             Server.players.add(p);
-
             while (true){
                 // Ask user what he wants 
-                dos.writeUTF("What do you want?[Date | Time]..\n"+ 
-                            "Type Exit to terminate connection."); 
+                // dos.writeUTF("Listening for messages..."); 
 
                 // receive the answer from client 
                 received = dis.readUTF(); 
@@ -56,20 +55,30 @@ public class ClientHandler extends Thread {
                     break; 
                 }
 
-
                 switch (received) { 
                     case "letter" : 
-                        toreturn = "test"; 
-                        dos.writeUTF(toreturn); 
+                        dos.writeUTF(Server.letter); 
+                        System.out.println("Sending the letter " + Server.letter);
                         break; 
 
                     case "score" : 
-                        toreturn = "test"; 
-                        dos.writeUTF(toreturn); 
+                        dos.writeUTF(String.valueOf(p.score)); 
                         break; 
-
+                        
+                    case "submit" :
+                        String userAnswers = dis.readUTF();
+                        p.submittedAnswers.add(userAnswers);
+                        Server.submNum +=1;
+                        if(Server.submNum == Server.players.size()){
+                            System.out.println("Ready to display scores");
+                        }
+                        break; 
+                        
                     default:  
                         break; 
+                
+                
+                        
                 } 
 
             }
@@ -79,6 +88,7 @@ public class ClientHandler extends Thread {
           
         try { 
             // closing resources 
+
             this.dis.close(); 
             this.dos.close(); 
               

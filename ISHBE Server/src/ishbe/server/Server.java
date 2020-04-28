@@ -7,18 +7,36 @@ package ishbe.server;
 import java.io.*; 
 import java.net.*; 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Random;
         
 // Server class 
-public class Server { 
+public class Server {
     
-    public static char letter;
+    public static String letter;
     public static ArrayList<Player> players = new ArrayList<Player>();
     public static int submNum;
+    public static int readyToStart;
+    public static ArrayList<String> letterList = new ArrayList<>(Arrays.asList("A","B","C","Ç","D","E","F","G","H","I","İ","J","K","L","M","N","O","Ö","P","R","S","Ş","T","U","Ü","V","Y","Z"));
+
     
-    public static void main(String[] args) throws IOException { 
+    public static void pickALetter(){
+        Random rand = new Random();
+        int n = rand.nextInt(letterList.size());        
+        String newLetter = letterList.get(n);
+        letterList.remove(n);
+        letter = newLetter;
+        System.out.println(newLetter);
+        ServerMain.letterLabel.setText(newLetter);
+        System.out.println("The new letter is: " + newLetter);
+    }
+    
+    public static void main(String args[]) throws IOException {
+        new ServerMain().setVisible(true);
+        pickALetter();
         // server is listening on port 5056 
-        ServerSocket ss = new ServerSocket(5056); 
-          
+        ServerSocket ss = new ServerSocket(5056);
+        
         // running infinite loop for getting 
         // client request 
         while (true) { 
