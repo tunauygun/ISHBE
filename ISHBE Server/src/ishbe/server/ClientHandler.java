@@ -71,6 +71,7 @@ public class ClientHandler extends Thread {
                         Server.submNum +=1;
                         if(Server.submNum == Server.players.size()){
                             System.out.println("Ready to display scores");
+                            ServerMain.displaySubmissions();
                         }
                         break; 
                         
