@@ -23,27 +23,10 @@ public class ServerMain extends javax.swing.JFrame {
      */
     public ServerMain()  {
         initComponents();
-        
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    //javax.swing.UIManager.setLookAndFeel("Windows");
-
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ServerMain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ServerMain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ServerMain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ServerMain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        
-        
+        setPlayer1Visible(false);
+        setPlayer2Visible(false);
+        setPlayer3Visible(false);
+        setPlayer4Visible(false);
     }
 
     /**
@@ -55,6 +38,7 @@ public class ServerMain extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel2 = new javax.swing.JLabel();
         jToggleButton1 = new javax.swing.JToggleButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -62,10 +46,37 @@ public class ServerMain extends javax.swing.JFrame {
         letterLabel = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         subTable = new javax.swing.JTable();
+        player1NameLabel = new javax.swing.JLabel();
+        player2NameLabel = new javax.swing.JLabel();
+        player3NameLabel = new javax.swing.JLabel();
+        player4NameLabel = new javax.swing.JLabel();
+        player1Spinner = new javax.swing.JSpinner();
+        player1Add5Button = new javax.swing.JButton();
+        player1Add10Button = new javax.swing.JButton();
+        player1AddButton = new javax.swing.JButton();
+        player2Spinner = new javax.swing.JSpinner();
+        player3Spinner = new javax.swing.JSpinner();
+        player4Spinner = new javax.swing.JSpinner();
+        player2Add5Button = new javax.swing.JButton();
+        player2Add10Button = new javax.swing.JButton();
+        player2AddButton = new javax.swing.JButton();
+        player3Add5Button = new javax.swing.JButton();
+        player3Add10Button = new javax.swing.JButton();
+        player3AddButton = new javax.swing.JButton();
+        player4Add5Button = new javax.swing.JButton();
+        player4Add10Button = new javax.swing.JButton();
+        player4AddButton = new javax.swing.JButton();
+
+        jLabel2.setText("jLabel2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jToggleButton1.setText("Yeni Tura Başla");
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
+            }
+        });
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -121,6 +132,106 @@ public class ServerMain extends javax.swing.JFrame {
             subTable.getColumnModel().getColumn(5).setResizable(false);
         }
 
+        player1NameLabel.setText("Oyuncu 1");
+
+        player2NameLabel.setText("Oyuncu 2");
+
+        player3NameLabel.setText("Oyuncu 3");
+
+        player4NameLabel.setText("Oyuncu 4");
+
+        player1Spinner.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        player1Add5Button.setText("+5");
+        player1Add5Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player1Add5ButtonActionPerformed(evt);
+            }
+        });
+
+        player1Add10Button.setText("+10");
+        player1Add10Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player1Add10ButtonActionPerformed(evt);
+            }
+        });
+
+        player1AddButton.setText("Puanları Ekle");
+        player1AddButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player1AddButtonActionPerformed(evt);
+            }
+        });
+
+        player2Spinner.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        player3Spinner.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        player4Spinner.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        player2Add5Button.setText("+5");
+        player2Add5Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2Add5ButtonActionPerformed(evt);
+            }
+        });
+
+        player2Add10Button.setText("+10");
+        player2Add10Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2Add10ButtonActionPerformed(evt);
+            }
+        });
+
+        player2AddButton.setText("Puanları Ekle");
+        player2AddButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2AddButtonActionPerformed(evt);
+            }
+        });
+
+        player3Add5Button.setText("+5");
+        player3Add5Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player3Add5ButtonActionPerformed(evt);
+            }
+        });
+
+        player3Add10Button.setText("+10");
+        player3Add10Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player3Add10ButtonActionPerformed(evt);
+            }
+        });
+
+        player3AddButton.setText("Puanları Ekle");
+        player3AddButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player3AddButtonActionPerformed(evt);
+            }
+        });
+
+        player4Add5Button.setText("+5");
+        player4Add5Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player4Add5ButtonActionPerformed(evt);
+            }
+        });
+
+        player4Add10Button.setText("+10");
+        player4Add10Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player4Add10ButtonActionPerformed(evt);
+            }
+        });
+
+        player4AddButton.setText("Puanları Ekle");
+        player4AddButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player4AddButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -138,15 +249,89 @@ public class ServerMain extends javax.swing.JFrame {
                         .addComponent(jLabel1)
                         .addGap(0, 0, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(60, 60, 60)
+                .addComponent(player1AddButton)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(291, 291, 291)
-                        .addComponent(jToggleButton1))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(68, 68, 68)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 543, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 543, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(player1Add10Button)
+                                    .addComponent(player1Add5Button, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(12, 12, 12)
+                                                .addComponent(player1NameLabel))
+                                            .addComponent(player1Spinner, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(91, 91, 91)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(player2NameLabel)
+                                                    .addComponent(player2Add5Button)
+                                                    .addComponent(player2Add10Button)))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(79, 79, 79)
+                                                .addComponent(player2Spinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(30, 30, 30))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(player2AddButton)
+                                        .addGap(22, 22, 22)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(player3Spinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addGroup(layout.createSequentialGroup()
+                                                        .addGap(10, 10, 10)
+                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                            .addComponent(player3Add10Button)
+                                                            .addComponent(player3Add5Button))))
+                                                .addGap(60, 60, 60))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(39, 39, 39)
+                                                .addComponent(player3AddButton)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(18, 18, 18)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(player4Spinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addGroup(layout.createSequentialGroup()
+                                                        .addGap(10, 10, 10)
+                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                            .addComponent(player4Add10Button)
+                                                            .addComponent(player4Add5Button)))))
+                                            .addComponent(player4AddButton))
+                                        .addGap(9, 9, 9))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(59, 59, 59)
+                                        .addComponent(player3NameLabel)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(player4NameLabel)
+                                        .addGap(26, 26, 26))))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(281, 281, 281)
+                        .addComponent(jToggleButton1)))
                 .addContainerGap(63, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {player1Spinner, player2Spinner, player3Spinner, player4Spinner});
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {player1Add5Button, player2Add5Button, player3Add5Button, player4Add5Button});
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {player1AddButton, player2AddButton, player3AddButton, player4AddButton});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -158,17 +343,102 @@ public class ServerMain extends javax.swing.JFrame {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
-                        .addComponent(jToggleButton1)
-                        .addContainerGap())
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(player1NameLabel)
+                            .addComponent(player2NameLabel)
+                            .addComponent(player3NameLabel)
+                            .addComponent(player4NameLabel))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(player1Spinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(player2Spinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(player3Spinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(player4Spinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(player1Add5Button)
+                            .addComponent(player2Add5Button)
+                            .addComponent(player3Add5Button)
+                            .addComponent(player4Add5Button))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(player1Add10Button)
+                            .addComponent(player2Add10Button)
+                            .addComponent(player3Add10Button)
+                            .addComponent(player4Add10Button))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(player1AddButton)
+                            .addComponent(player2AddButton)
+                            .addComponent(player3AddButton)
+                            .addComponent(player4AddButton)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(37, 37, 37)
-                        .addComponent(letterLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(letterLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addComponent(jToggleButton1)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void player1Add10ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player1Add10ButtonActionPerformed
+        player1Spinner.setValue((Integer)player1Spinner.getValue() + 10);
+    }//GEN-LAST:event_player1Add10ButtonActionPerformed
+
+    private void player2Add5ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2Add5ButtonActionPerformed
+        player2Spinner.setValue((Integer)player2Spinner.getValue() + 5);
+    }//GEN-LAST:event_player2Add5ButtonActionPerformed
+
+    private void player2Add10ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2Add10ButtonActionPerformed
+        player2Spinner.setValue((Integer)player2Spinner.getValue() + 10);
+    }//GEN-LAST:event_player2Add10ButtonActionPerformed
+
+    private void player3AddButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player3AddButtonActionPerformed
+        Server.players.get(2).score += (Integer)player3Spinner.getValue();
+    }//GEN-LAST:event_player3AddButtonActionPerformed
+
+    private void player4AddButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player4AddButtonActionPerformed
+        Server.players.get(3).score += (Integer)player4Spinner.getValue();
+    }//GEN-LAST:event_player4AddButtonActionPerformed
+
+    private void player4Add5ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player4Add5ButtonActionPerformed
+        player4Spinner.setValue((Integer)player4Spinner.getValue() + 5);
+    }//GEN-LAST:event_player4Add5ButtonActionPerformed
+
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+        // TODO add your handling code here:
+        setPlayer1Visible(true);
+        setPlayer2Visible(true);
+        setPlayer3Visible(true);
+        setPlayer4Visible(true);
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
+
+    private void player1Add5ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player1Add5ButtonActionPerformed
+        player1Spinner.setValue((Integer)player1Spinner.getValue() + 5);        
+    }//GEN-LAST:event_player1Add5ButtonActionPerformed
+
+    private void player3Add5ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player3Add5ButtonActionPerformed
+        player3Spinner.setValue((Integer)player3Spinner.getValue() + 5);
+    }//GEN-LAST:event_player3Add5ButtonActionPerformed
+
+    private void player3Add10ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player3Add10ButtonActionPerformed
+        player3Spinner.setValue((Integer)player3Spinner.getValue() + 10);
+    }//GEN-LAST:event_player3Add10ButtonActionPerformed
+
+    private void player4Add10ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player4Add10ButtonActionPerformed
+        player4Spinner.setValue((Integer)player4Spinner.getValue() + 10);
+    }//GEN-LAST:event_player4Add10ButtonActionPerformed
+
+    private void player1AddButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player1AddButtonActionPerformed
+        Server.players.get(0).score += (Integer)player1Spinner.getValue();
+    }//GEN-LAST:event_player1AddButtonActionPerformed
+
+    private void player2AddButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2AddButtonActionPerformed
+        Server.players.get(1).score += (Integer)player2Spinner.getValue();
+    }//GEN-LAST:event_player2AddButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -183,7 +453,7 @@ public class ServerMain extends javax.swing.JFrame {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Windows".equals(info.getName())) {
                     //javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    javax.swing.UIManager.setLookAndFeel("Windows");
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
 
                     break;
                 }
@@ -207,16 +477,47 @@ public class ServerMain extends javax.swing.JFrame {
             }
         });
     }
-      
+    
+    public static void setPlayer1Visible(Boolean b){
+        if(Server.players.size()>=1){
+        player1NameLabel.setText(Server.players.get(0).name);}
+        player1NameLabel.setVisible(b);
+        player1Spinner.setVisible(b);
+        player1Add5Button.setVisible(b);
+        player1Add10Button.setVisible(b);
+        player1AddButton.setVisible(b);
+    }
+        public static void setPlayer2Visible(Boolean b){
+        if(Server.players.size()>=2){
+        player2NameLabel.setText(Server.players.get(1).name);}
+        player2NameLabel.setVisible(b);
+        player2Spinner.setVisible(b);
+        player2Add5Button.setVisible(b);
+        player2Add10Button.setVisible(b);
+        player2AddButton.setVisible(b);
+    }
+        public static void setPlayer3Visible(Boolean b){
+        if(Server.players.size()>=3){
+        player3NameLabel.setText(Server.players.get(2).name);}
+        player3NameLabel.setVisible(b);
+        player3Spinner.setVisible(b);
+        player3Add5Button.setVisible(b);
+        player3Add10Button.setVisible(b);
+        player3AddButton.setVisible(b);
+    }
+        public static void setPlayer4Visible(Boolean b){
+        if(Server.players.size()>=4){
+        player4NameLabel.setText(Server.players.get(3).name);}
+        player4NameLabel.setVisible(b);
+        player4Spinner.setVisible(b);
+        player4Add5Button.setVisible(b);
+        player4Add10Button.setVisible(b);
+        player4AddButton.setVisible(b);
+    }
+    
     public static void displaySubmissions(){
-        
         for(Player p: Server.players){
-            System.out.println(p.name);
-            System.out.println(p.submittedAnswers.get(p.submittedAnswers.size()-1));
-            
             String[] sep = p.submittedAnswers.get(p.submittedAnswers.size()-1).split(";");
-            System.out.println(sep.length);
-            
             Object submissionsTableItem[] = new Object[6];
             submissionsTableItem[0] = p.name;
             submissionsTableItem[1] = sep[0];
@@ -228,14 +529,36 @@ public class ServerMain extends javax.swing.JFrame {
             table.addRow(submissionsTableItem);
         }
     }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable1;
     private javax.swing.JToggleButton jToggleButton1;
     public static javax.swing.JLabel letterLabel;
+    private static javax.swing.JButton player1Add10Button;
+    private static javax.swing.JButton player1Add5Button;
+    private static javax.swing.JButton player1AddButton;
+    private static javax.swing.JLabel player1NameLabel;
+    private static javax.swing.JSpinner player1Spinner;
+    private static javax.swing.JButton player2Add10Button;
+    private static javax.swing.JButton player2Add5Button;
+    private static javax.swing.JButton player2AddButton;
+    private static javax.swing.JLabel player2NameLabel;
+    private static javax.swing.JSpinner player2Spinner;
+    private static javax.swing.JButton player3Add10Button;
+    private static javax.swing.JButton player3Add5Button;
+    private static javax.swing.JButton player3AddButton;
+    private static javax.swing.JLabel player3NameLabel;
+    private static javax.swing.JSpinner player3Spinner;
+    private static javax.swing.JButton player4Add10Button;
+    private static javax.swing.JButton player4Add5Button;
+    private static javax.swing.JButton player4AddButton;
+    private static javax.swing.JLabel player4NameLabel;
+    private static javax.swing.JSpinner player4Spinner;
     private static javax.swing.JTable subTable;
     // End of variables declaration//GEN-END:variables
 }

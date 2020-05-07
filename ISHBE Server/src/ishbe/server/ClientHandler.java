@@ -28,7 +28,22 @@ public class ClientHandler extends Thread {
         this.dos = dos; 
     } 
     
-
+        
+    public static void setScoreControllersVisible(){
+        switch (Server.players.size()) {
+            case 4:
+                ServerMain.setPlayer4Visible(true);
+            case 3:
+                ServerMain.setPlayer3Visible(true);
+            case 2:
+                ServerMain.setPlayer2Visible(true);
+            case 1:
+                ServerMain.setPlayer1Visible(true);
+            default:
+                System.out.println("You need to add more buttons to add scores for players");
+                break;
+        }
+    }
   
     @Override
     public void run(){ 
@@ -40,6 +55,8 @@ public class ClientHandler extends Thread {
             String username = dis.readUTF();
             p = new Player(username);
             Server.players.add(p);
+            setScoreControllersVisible();
+                    
             while (true){
                 // Ask user what he wants 
                 // dos.writeUTF("Listening for messages..."); 
